@@ -1,22 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1D Motion Graphs</title>
+    <title>1D Motion Graphs</title>
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Space Mono"
     />
-    <script type="module" crossorigin src="/assets/index-D6sWCbaT.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DejVfwOU.css">
+    <script type="module" crossorigin src="./assets/index-D6sWCbaT.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DejVfwOU.css" />
   </head>
   <body>
     <canvas class="webgl"></canvas>
     <!-- ponytail: dismiss is per-page-load; add localStorage if users report it nagging -->
     <div class="small-screen-notice">
-      <span>Best viewed on a larger screen — try a laptop, desktop, or tablet in landscape.</span>
-      <button type="button" onclick="this.parentElement.remove()">Got it</button>
+      <span
+        >Best viewed on a larger screen — try a laptop, desktop, or tablet in
+        landscape.</span
+      >
+      <button type="button" onclick="this.parentElement.remove()">
+        Got it
+      </button>
     </div>
     <script>
       // A small frame is fixed by fullscreen; a small device is not. Offer the
@@ -37,6 +43,6 @@
         setCopy();
         document.addEventListener("fullscreenchange", setCopy);
       })();
-    </script>
+    </script>
   </body>
 </html>

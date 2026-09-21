@@ -12,6 +12,11 @@
   </head>
   <body>
     <canvas class="webgl"></canvas>
+    <!-- ponytail: dismiss is per-page-load; add localStorage if users report it nagging -->
+    <div class="small-screen-notice">
+      <span>Best viewed on a larger screen — try a laptop, desktop, or tablet in landscape.</span>
+      <button type="button" onclick="this.parentElement.remove()">Got it</button>
+    </div>
     <script type="module" src="./script.js"></script>
   </body>
 </html>

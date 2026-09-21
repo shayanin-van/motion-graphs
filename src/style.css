@@ -15,3 +15,37 @@ body {
   left: 0;
   outline: none;
 }
+
+.small-screen-notice {
+  display: none;
+}
+
+/* narrow (phone or tablet portrait) or short (phone landscape) — both squeeze the 3 stacked graphs.
+   900px sits between tablet portrait (768, too cramped) and tablet landscape (1024, fine). */
+@media (max-width: 900px), (max-height: 500px) {
+  .small-screen-notice {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    background: #1a1a1aee;
+    color: white;
+    font-family: "Space Mono", monospace;
+    font-size: 13px;
+  }
+
+  .small-screen-notice button {
+    background: none;
+    border: 1px solid #fff6;
+    color: inherit;
+    font: inherit;
+    padding: 4px 10px;
+    cursor: pointer;
+  }
+}

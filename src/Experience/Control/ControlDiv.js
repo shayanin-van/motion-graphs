@@ -1,6 +1,7 @@
 import PlayButton from "./PlayButton";
 import AreaAndSlopeButton from "./AreaAndSlopeButton";
 import VectorButton from "./vectorButton";
+import FullscreenButton from "./FullscreenButton";
 
 export default class ControlDiv {
   constructor() {
@@ -48,5 +49,11 @@ export default class ControlDiv {
     this.areaAndSlopeButton = new AreaAndSlopeButton(this.div);
     this.playButton = new PlayButton(this.div);
     this.vectorButton = new VectorButton(this.div);
+
+    // false when the API is missing (iPhone Safari) or when an embedding
+    // iframe was not given allow="fullscreen" -- no button in either case
+    if (document.fullscreenEnabled) {
+      this.fullscreenButton = new FullscreenButton(this.div);
+    }
   }
 }

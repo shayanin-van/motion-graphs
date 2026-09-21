@@ -17,6 +17,26 @@
       <span>Best viewed on a larger screen — try a laptop, desktop, or tablet in landscape.</span>
       <button type="button" onclick="this.parentElement.remove()">Got it</button>
     </div>
+    <script>
+      // A small frame is fixed by fullscreen; a small device is not. Offer the
+      // button while it is still worth tapping, then fall back to the device
+      // advice. On a laptop the media query hides the banner at that point
+      // anyway -- only a phone stays cramped after going fullscreen.
+      (function () {
+        var span = document.querySelector(".small-screen-notice span");
+        var device = span.textContent;
+        function setCopy() {
+          span.textContent =
+            window.self !== window.top &&
+            document.fullscreenEnabled &&
+            !document.fullscreenElement
+              ? "Tap the fullscreen button, bottom right, for more room."
+              : device;
+        }
+        setCopy();
+        document.addEventListener("fullscreenchange", setCopy);
+      })();
+    </script>
     <script type="module" src="./script.js"></script>
   </body>
 </html>
